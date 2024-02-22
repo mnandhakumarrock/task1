@@ -10,7 +10,6 @@ provider "aws" {
   region = "ap-south-1"
   access_key = var.aws_access_key
   secret_key = var.aws_secret_key
-
 }
 resource "aws_vpc" "myvpc" {
   cidr_block       = "10.0.0.0/16"
@@ -41,3 +40,4 @@ resource "aws_security_group" "allow_all" {
   name        = "allow_mithran"
   description = "Allow TLS inbound traffic"
   vpc_id      = aws_vpc.myvpc.id
+}
