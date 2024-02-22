@@ -37,13 +37,7 @@ resource "aws_subnet" "pvtsub" {
     Name = "pvt-sub"
   }
 }
-resource "aws_internet_gateway" "myigw" {
-  vpc_id = aws_vpc.myvpc.id
-
-  tags = {
-    Name = "igw"
-  }
-}
-resource "aws_route_table" "pubrt" {
-  vpc_id = aws_vpc.myvpc.id
-}
+resource "aws_security_group" "allow_all" {
+  name        = "allow_mithran"
+  description = "Allow TLS inbound traffic"
+  vpc_id      = aws_vpc.myvpc.id
