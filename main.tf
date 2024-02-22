@@ -37,7 +37,7 @@ resource "aws_subnet" "pvtsub" {
   }
 }
 resource "aws_security_group" "allow_all" {
-  name        = "allow_mithran"
+  name        = "allow_nandha"
   description = "Allow TLS inbound traffic"
   vpc_id      = aws_vpc.myvpc.id
 }
